@@ -17,26 +17,24 @@ void combine1() {
     }
 }
 
-
-// 재귀함수로
-void combine2(int start, vector<int> b) {
-    if(b.size() == k) {
-        for(int l : b) cout << l << " ";
+void combine2(int start, vector<int> v) {
+    if(v.size() == k) {
+        for (int a : v) cout << a << " ";
         cout << endl;
         return;
     }
     for(int i = start + 1; i < n; i++) {
-        b.push_back(i);
-        combine2(i, b);
-        b.pop_back();
+        v.push_back(i);
+        combine2(i, v);
+        v.pop_back();
     }
-    return;
 }
 
 
 int main() {
-    for(int i = 1; i < n+1; i++) b.push_back(i);
-    combine1();
-    combine2(-1, b);
+    vector<int> v;
+    // for(int i = 1; i < n+1; i++) v.push_back(i);
+    // combine1();
+    combine2(-1, v);
 }
 
