@@ -30,7 +30,7 @@ void t_sol() {
     cin >> A >> B >> C;
     for(int i = 0; i < 3; i++) {
         cin >> a >> b;
-        for(int j = a; j <=b; j++) cnt[j]++;
+        for(int j = a; j < b; j++) cnt[j]++;
     }
     for(int j = 1; j < 100; j++) {
         if(cnt[j]) {
