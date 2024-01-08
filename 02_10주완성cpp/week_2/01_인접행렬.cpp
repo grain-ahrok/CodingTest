@@ -2,6 +2,7 @@
 using namespace std;
 const int V = 10;
 bool a[V][V], visited[V];
+// 1-2, 1-3, 3-4
 
 void go(int from) {
     visited[from] = 1;
