@@ -35,5 +35,29 @@ int main() {
 
     cout << total;
 
-
 }
+
+
+// 사과를 담을 수 있는 범위 left, right 기준으로 나눌 수 있도록 r=l+m-1
+int n, m, j, l, r, temp, ret;
+int main(){
+    cin >> n >> m >> j;
+    l = 1;
+    for(int i = 0; i < j; j++){
+        r = l + m -1;
+        cin >> temp;
+        if(temp >= l && temp <= r) continue;
+        else {
+            if (temp < l) {
+                ret += (l-temp);
+                l = temp;
+            } else {
+                l += (temp - r);
+                ret += (temp - r);
+            }
+        }
+    }
+    cout << ret << "\n";
+}
+
+
