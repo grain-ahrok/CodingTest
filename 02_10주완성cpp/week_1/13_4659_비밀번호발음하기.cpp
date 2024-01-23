@@ -20,7 +20,7 @@ int main() {
         bool flag = 0;
         vcnt = 0; lcnt = 0;
         for(int i = 0; i < word.length(); i++) {
-            if(is_vowel(word[i])) vcnt++, lcnt=0, is_include_v = 1;
+            if(is_vowel(word[i])) vcnt++; lcnt=0; is_include_v = 1;
             else lcnt++, vcnt=0;
             if(vcnt == 3 || lcnt == 3) flag = 1;
             if(i>0 && pre==word[i] && word[i]!='e' && word[i]!='o') flag = 1;
