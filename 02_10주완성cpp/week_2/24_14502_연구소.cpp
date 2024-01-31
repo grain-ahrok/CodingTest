@@ -63,7 +63,7 @@ int main(){
         }
     }
     
-
+ 
     // 2. 조합으로 벽을 세운다. 
     for(int i = 0; i < walls.size()-2; i++) {
         for(int j = i+1; j < walls.size()-1; j++) {
