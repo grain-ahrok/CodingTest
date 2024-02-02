@@ -26,7 +26,6 @@ void print() {
 
 
 int dfs(int y, int x) {
-    // int visited[50][50] = {{0,},};
 
     vector<pair<int, int>> visited;
     queue<pair<int, int>> v;
