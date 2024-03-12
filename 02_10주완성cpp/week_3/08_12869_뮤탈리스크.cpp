@@ -1,43 +1,59 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> damage = {9, 3, 1};
-vector<int> ret;
+int visited[64][64][64];
+int scv[3];
 int N;
+int ret = 60;
+int d[6][3] = {
+    {9, 3, 1},
+    {9, 1, 3},
+    {3, 9, 1},
+    {3, 1, 9},
+    {1, 9, 3},
+    {1, 3, 9}
+};
 
+struct S{
+    int a, b, c;
+};
 
-void combine(vector<int> _scv, vector<int> _damage, int cnt) {
-    if(max_element(_ret.begin(), _ret.end()) <= 0) {
-        cout << cnt;
-        return;
-    }
-
-    do {
-        for(int i = 0; i < N; i++) {
-            _scv[i] -= 
-        }
-
-    } while (next_permutation(_damage.begin(), _damage.end()));
-
-}
 
 int main() {
     cin >> N;
-    vector<int> scv;
 
-    int temp;
     for(int i = 0; i < N; i++) {
-        cin >> temp;
-        scv.push_back(temp);
+        cin >> scv[i];
     }
+    if(N == 1) {
+        visited[scv[0]][0][0] = 1;
+    } else if(N == 2)  {
+        visited[scv[0]][scv[1]][0] = 1;
+    } else {
+        visited[scv[0]][scv[1]][scv[2]] = 1;
+    }
+    
 
+    queue<S> q;
+    q.push({scv[0], scv[1], scv[2]});
 
-    do {
-        combine(scv, damage, 0);
-    } while(next_permutation(damage.begin(), damage.end()));
-        
-
-
-
-
+    while(q.size()) {
+        struct S here = q.front();
+        q.pop();
+        for(int i = 0; i < 6; i++) {
+            struct S _new = {
+                here.a-d[i][0] >= 0 ? here.a-d[i][0] : 0,
+                here.b-d[i][1] >= 0 ? here.b-d[i][1] : 0,
+                here.c-d[i][2] >= 0 ? here.c-d[i][2] : 0,
+            };
+            if(visited[_new.a][_new.b][_new.c]) continue;
+            if(_new.a == 0 && _new.b == 0 && _new.c == 0) {
+                cout << visited[here.a][here.b][here.c];
+                return 0;
+            }
+            visited[_new.a][_new.b][_new.c] = visited[here.a][here.b][here.c] + 1;
+            q.push({_new.a, _new.b, _new.c});
+        }
+    };
+    
 }

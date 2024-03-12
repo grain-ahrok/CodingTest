@@ -5,7 +5,7 @@ vector<int> adj[4];
 vector<int> v;
 
 void print(){
-    for(int i : v ) cout << char(i + 'A') << " "
+    for(int i : v ) cout << char(i + 'A') << " ";
     cout << "\n";
 }
 
