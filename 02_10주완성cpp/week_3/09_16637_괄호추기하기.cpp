@@ -36,6 +36,6 @@ int main() {
     cin >> N;
     cin >> str;
 
-    // dfs(0, str[0]-'0');
+    dfs(0, str[0]-'0');
     cout << maxV << "\n";
 }
