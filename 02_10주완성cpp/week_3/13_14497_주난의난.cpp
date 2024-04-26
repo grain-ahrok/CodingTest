@@ -16,7 +16,6 @@ struct cor {
 
 
 void dfs(int y, int x) {
-    // cout << "{ " << y << " : " << x << " }" << "\n";
     visited[y][x] = 1;
     if(smap[y][x] == '1') {
         smap[y][x] = '0';
@@ -67,16 +66,3 @@ int main() {
     }
 
 }
-
-
-
-
-/**
- * 
- *     for(int i = 0; i < N; i++) {
-        for(int j = 0; j < M; j++) {
-            cout << smap[i][j];
-        }
-        cout << "\n";
-    }
-*/

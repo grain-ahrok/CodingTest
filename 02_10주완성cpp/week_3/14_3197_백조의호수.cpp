@@ -20,7 +20,7 @@ void QClear(queue<pair<int, int>> &q) {
     swap(q, empty);
 }
 
-// 
+// 얼음이 녹아가는 과정
 void melting() {
 
     while(iceQ.size()) {
@@ -63,13 +63,6 @@ void bfs() {
             }
         }
     }
-    // cout << "\n";
-    // for(int i = 0; i < R; i++) {
-    //     for(int j = 0; j < C; j++) {
-    //         cout << L_visited[i][j];
-    //     }
-    //     cout << "\n";
-    // }
 }
 
 
@@ -97,10 +90,10 @@ int main () {
     LQ.push(ll);
     
     while(true) {
-        
 
         // 백조가 움직일때
         bfs();
+        // 얼음이 녹을 때
         melting();
 
         ans ++ ;
@@ -109,43 +102,5 @@ int main () {
         iceQ = iceQtemp;
         QClear(iceQtemp);
 
-        // cout << " \n";
-        // for(int i = 0; i < R; i++) {
-        //     for(int j = 0; j < C; j++) {
-        //         cout << smap[i][j];
-        //     }
-        //     cout << "\n";
-        // }
-        
-        // cout << "\n";
-        // for(int i = 0; i < R; i++) {
-        //     for(int j = 0; j < C; j++) {
-        //         cout << visited[i][j];
-        //     }
-        //     cout << "\n";
-        // }
-
-        // cout << "\n";
-        // for(int i = 0; i < R; i++) {
-        //     for(int j = 0; j < C; j++) {
-        //         cout << L_visited[i][j];
-        //     }
-        //     cout << "\n";
-        // }
-
     }
 }
-
-
-
-/**
- * 
- * 
- *         cout << " \n";
-        for(int i = 0; i < R; i++) {
-            for(int j = 0; j < C; j++) {
-                cout << smap[i][j];
-            }
-            cout << "\n";
-        }
-*/
