@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+vector<int> adj[1004];
+int visited[1004];
 
-void postOrdre(int here) [
+
+void postOrder(int here) {
     if(visited[here] == 0){
         if(adj[here].size() == 1) postOrder(adj[here][0]);
         if(adj[here].size() == 2) {
@@ -12,8 +15,7 @@ void postOrdre(int here) [
         visited[here] = 1;
         cout << here << " ";
     }
-]
-
+}
 
 
 void preOrder(int here) {
@@ -45,6 +47,7 @@ void inOrder(int here) {
         }
     }
 }
+
 
 int main() {
     adj[1].push_back(2);
