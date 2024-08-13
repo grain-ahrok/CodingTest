@@ -12,16 +12,21 @@ int main() {
     cin >> N;
     cin >> k;
     
-    cout << "여기 괜춘";
     for(int i = 1; i<= N; i++) {
         v.push_back(i);
     }
     
 
-    int idx = k;
-    while(v.size()) {
+    int idx = k-1;
+    cout << "<";
+    while(v.size()>1){
         cout << v[idx] << ", ";
         v.erase(v.begin()+idx);
-        idx = idx+(k-1) % v.size();
+        idx = (idx+(k-1)) % v.size();
     }
+
+    cout << v[idx] << ">";
+        
+
+
 }
