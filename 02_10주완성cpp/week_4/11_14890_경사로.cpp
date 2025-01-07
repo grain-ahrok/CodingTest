@@ -15,7 +15,7 @@ int checkCross(vector<int> v){
 
         // 2. 차이가 2이상 나는 경우 
         if(abs(v[i-1]-v[i])>=2) return 0;
-
+        
         // 3. 앞에 경사로를 두어야 하는 경우
         if(v[i-1] - v[i] == -1) {
             if(i-L < 0) return 0;
@@ -25,7 +25,6 @@ int checkCross(vector<int> v){
                 r[j] = 1;
             }
         }
-        
         // 4. i부터 경사로를 두어야 하는 경우
         if(v[i-1] - v[i] == 1) {
             if(i+L > N) return 0;
